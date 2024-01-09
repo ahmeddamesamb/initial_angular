@@ -1,0 +1,38 @@
+<div class="d-flex">
+  <div class="sidebare">
+    <div class="sidebareheader">
+      <h5 class="fw-bold">OFMS CLIENT CUSTOMER</h5>
+      <img src="#" alt="" srcset="">
+    </div>
+  </div>
+  <div class="main">
+    <img src="#" alt="" sizes="" srcset="">
+
+    <form class="formulaireConeexion" [formGroup]="connexionForm" (ngSubmit)="onSubmit()">
+      <div class="divlog">
+        <input type="email" class="form-control " id="email" placeholder="email" formControlName="email"
+               [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+               aria-describedby="emailHelp">
+
+        <div *ngIf="(f['email'].dirty || f['email'].touched) && f['email'].errors" class="errors">
+          <span *ngIf="f['email'].errors?.['required']">Email is required</span>
+          <span *ngIf="f['email'].errors?.['email']">Email is invalid</span>
+        </div>
+
+      </div>
+      <div class="divlog">
+        <input type="password" class="form-control " id="password" placeholder="password" formControlName="password"
+               [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+        <div *ngIf="(f['password'].dirty || f['password'].touched) && f['password'].errors" class="errors">
+          <span *ngIf="f['password'].errors?.['required']">password is required</span>
+          <span *ngIf="f['password'].errors?.['email']">password is invalid</span>
+        </div>
+      </div>
+      <button class="btn btn-dark w-50 fw-bold">connexion</button>
+      <!--      [routerLink]="['/home']"-->
+    </form>
+  </div>
+
+</div>
+
+<!-- commentait intelij -->
